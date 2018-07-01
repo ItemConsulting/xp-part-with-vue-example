@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<part>
+    <display-name>Hello Vue</display-name>
+    <config>
+        <input type="TextLine" name="title">
+            <label>Title</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+
+        <input type="TextLine" name="description">
+            <label>Description</label>
+            <occurrences minimum="0" maximum="1"/>
+        </input>
+    </config>
+</part>

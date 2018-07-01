@@ -1,0 +1,13 @@
+<div id="vue">
+  <div data-th-id="${id}"></div>
+  <script data-th-inline="javascript">
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var App = window[ /*[[${appName}]]*/ 'App' ];
+
+      App.data = function() {
+        return /*[[${data}]]*/ { title: 'Not found' };
+      };
+      new Vue(App).$mount(/*[['#' + ${id}]]*/ 'my-id');
+    });
+  </script>
+</div>
