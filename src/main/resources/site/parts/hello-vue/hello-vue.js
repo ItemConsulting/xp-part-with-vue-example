@@ -15,12 +15,12 @@ exports.get = function (req) {
   var component = portal.getComponent();
 
   var scripts = [
-    { path: "client/js/app.924ebb7c.js" },
-    { path: "client/js/chunk-vendors.512e6579.js" }
+    { path: "client/app.js" },
+    { path: "client/chunk-vendors.js" }
   ].map(portal.assetUrl);
 
   var styles = [
-    { path: "client/css/app.a2958cb0.css" }
+    { path: "client/app.css" }
   ].map(portal.assetUrl);
 
   return itemVue.getVueResponse({
