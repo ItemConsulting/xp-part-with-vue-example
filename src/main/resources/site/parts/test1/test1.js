@@ -3,7 +3,7 @@ var portal = require('/lib/xp/portal');
 
 /**
  * Replace all "/" with "-" to create a valid id string
- *
+ *sads
  * @param {string} path
  * @returns {string}
  */
@@ -16,7 +16,7 @@ exports.get = function (req) {
 
   var scripts = [
     { path: "client/js/app.js" },
-    { path: "client/js/chunk-vendors.4088140b.js" }
+    { path: "client/js/chunk-vendors.512e6579.js" }
   ].map(portal.assetUrl);
 
   var styles = [
@@ -25,7 +25,7 @@ exports.get = function (req) {
 
   return itemVue.getVueResponse({
     id: pathToId(component.path),
-    appName: 'HelloVue',
+    appName: 'Test1',
     data: component.config,
     scripts: scripts,
     styles: styles

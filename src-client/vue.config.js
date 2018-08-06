@@ -1,3 +1,3 @@
 module.exports = {
-  "outputDir": "../src/main/resources/assets/client"
+  "outputDir": "../src/main/resources/assets/client",
 };

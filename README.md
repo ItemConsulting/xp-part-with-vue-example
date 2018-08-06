@@ -20,19 +20,18 @@ To deploy application use
 
 Right now generated filenames with hashes are used, and references needs to be updated.
 
-## Frontend 
+## Frontend
 
 Frontend files can be found in the [src-client](src-client) directory.
 The entry point of the application is [main.js](src-client/src/main.js)
 
-## Backend 
+## Backend
 
 ### Helper library
 
-Some helper utils can be found at "[item/vue](src/main/resources/lib/item/vue.js)", which uses this 
+Some helper utils can be found at "[item/vue](src/main/resources/lib/item/vue.js)", which uses this
 [Thymeleaf template](src/main/resources/lib/item/vue.html)
 
 ### Example part
 
 An example part (*hello-vue*) can be seen [here](src/main/resources/site/parts/hello-vue).
-

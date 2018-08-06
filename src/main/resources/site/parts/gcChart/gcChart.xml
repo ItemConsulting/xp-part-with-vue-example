@@ -1,0 +1,26 @@
+<part>
+<display-name>Google Chart</display-name>
+<config>
+  <field-set name="things">
+    <label>Things</label>
+    <items>
+      <input type="TextLine" name="thing">
+        <label>Thing</label>
+        <occurrences minimum="0" maximum="1"/>
+      </input>
+      <input type="TextLine" name="color1">
+        <label>Color1</label>
+        <occurrences minimum="0" maximum="1"/>
+      </input>
+      <input type="TextLine" name="color2">
+        <label>Color2</label>
+        <occurrences minimum="0" maximum="1"/>
+      </input>
+      <input type="TextLine" name="color3">
+        <label>Color3</label>
+        <occurrences minimum="0" maximum="1"/>
+      </input>
+    </items>
+  </field-set>
+</config>
+</part>

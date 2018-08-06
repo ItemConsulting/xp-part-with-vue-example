@@ -1,13 +1,16 @@
 <div>
   <div data-th-id="${id}"></div>
-  <script data-th-inline="javascript">
+  <script type="text/javascript" data-th-inline="javascript">
     document.addEventListener("DOMContentLoaded", function(event) {
       var App = window[ /*[[${appName}]]*/ 'App' ];
 
-      App.data = function() {
-        return /*[[${data}]]*/ { };
-      };
-      new Vue(App).$mount(/*[['#' + ${id}]]*/ 'my-id');
+      var component =  new Vue(App).$mount(/*[['#' + ${id}]]*/ 'my-id');
+      var partConfig = /*[[${data}]]*/;
+
+      for( var prop in partConfig ){
+        component.$set(component.enonicStuff, prop, partConfig[prop] );
+      }
+      //console.log(component);
     });
   </script>
 </div>

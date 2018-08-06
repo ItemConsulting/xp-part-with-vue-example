@@ -1,0 +1,18 @@
+<part>
+<display-name>Include Parts</display-name>
+<config>
+  <field-set name="things">
+    <label>Things</label>
+    <items>
+      <input type="TextLine" name="nexty">
+        <label>nexty</label>
+        <occurrences minimum="0" maximum="1"/>
+      </input>
+      <input type="TextLine" name="pewpew">
+        <label>Pewpew</label>
+        <occurrences minimum="0" maximum="1"/>
+      </input>
+    </items>
+  </field-set>
+</config>
+</part>

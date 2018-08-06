@@ -1,4 +1,5 @@
 var thymeleaf = require('/lib/xp/thymeleaf');
+var portal = require('/lib/xp/portal');
 
 var view = resolve('vue.html');
 
@@ -42,9 +43,16 @@ function linkElementWithPreload (as) {
  * @param {string} config.data
  * @returns {object}
  */
-exports.getVueResponse = function (config) {
-  var styles = config.styles || [];
-  var scripts = config.scripts || [];
+exports.getVueResponse = function (config, resourcePath) {
+
+  var styles = [
+    { path: "app.css" }
+  ].map(portal.assetUrl);
+
+  var scripts = [
+    { path: "app.js" },
+    { path: "chunk-vendors.js" }
+  ].map(portal.assetUrl);
 
   return {
     body: thymeleaf.render(view, config),
@@ -53,9 +61,21 @@ exports.getVueResponse = function (config) {
       headEnd:
         styles.map(linkElementWithPreload('style')).join('') +
         scripts.reverse().map(linkElementWithPreload('script')).join('') +
-        styles.map(linkElement).join(''),
+        styles.map(linkElement).join('') +
+        (typeof(resourcePath) != "undefined" ? scriptElement(resourcePath) : ''),
+
       bodyEnd:
         scripts.map(scriptElement).join('')
     }
   }
 };
+
+/**
+ * Replace all "/" with "-" to create a valid id string
+ *
+ * @param {string} path
+ * @returns {string}
+ */
+exports.pathToId = function (path) {
+  return path.replaceAll('/', '-');
+}

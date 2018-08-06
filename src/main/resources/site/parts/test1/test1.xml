@@ -1,0 +1,18 @@
+<part>
+<display-name>test1</display-name>
+<config>
+  <field-set name="things">
+    <label>Things</label>
+    <items>
+      <input type="TextLine" name="title">
+        <label>Title</label>
+        <occurrences minimum="0" maximum="1"/>
+      </input>
+      <input type="TextLine" name="description">
+        <label>Description</label>
+        <occurrences minimum="0" maximum="1"/>
+      </input>
+    </items>
+  </field-set>
+</config>
+</part>

@@ -13,21 +13,13 @@ function pathToId  (path) {
 
 exports.get = function (req) {
   var component = portal.getComponent();
+  var config = {}
 
-  var scripts = [
-    { path: "client/js/app.js" },
-    { path: "client/js/chunk-vendors.4088140b.js" }
-  ].map(portal.assetUrl);
-
-  var styles = [
-    { path: "client/css/app.fd50e6ef.css" }
-  ].map(portal.assetUrl);
+  log.info("%s", JSON.stringify(component,null,4));
 
   return itemVue.getVueResponse({
     id: pathToId(component.path),
-    appName: 'HelloVue',
+    appName: 'TestButton',
     data: component.config,
-    scripts: scripts,
-    styles: styles
   });
 };
