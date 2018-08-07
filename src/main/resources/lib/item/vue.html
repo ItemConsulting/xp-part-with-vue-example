@@ -4,10 +4,15 @@
     document.addEventListener("DOMContentLoaded", function(event) {
       var App = window[ /*[[${appName}]]*/ 'App' ];
 
-      App.data = function() {
-        return /*[[${data}]]*/ { };
-      };
-      new Vue(App).$mount(/*[['#' + ${id}]]*/ 'my-id');
+      const component = new Vue({
+        ...App,
+        webSocket: window.assurance.webSocket
+      }).$mount(/*[['#' + ${id}]]*/ 'my-id');
+
+      const data = /*[[${data}]]*/ { };
+      for (var key in data) {
+        Vue.set(component, key, data[key]);
+      }
     });
   </script>
 </div>
